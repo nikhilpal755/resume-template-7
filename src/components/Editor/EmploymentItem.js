@@ -22,20 +22,35 @@ const EmploymentItem = ({ data, index, handleChange }) => {
       )}
 
       <TextInput
-        placeholder='Postion Title - Company'
+        placeholder='Postion Title'
         style='pb-2'
         isDisabled={isToggled}
         name='position'
         defaultValue={data.position}
         handleChange={(e) => handleChange(index, e)}
       />
+      <TextInput
+        placeholder='Company'
+        style='pb-2'
+        isDisabled={isToggled}
+        name='position'
+        defaultValue={data.company}
+        handleChange={(e) => handleChange(index, e)}
+      />
       {!isToggled && (
         <div>
           <TextInput
-            placeholder='Date From - To'
+            placeholder='Date From'
             style='pb-2'
             name='date'
-            defaultValue={data.date}
+            defaultValue={data.from}
+            handleChange={(e) => handleChange(index, e)}
+          />
+          <TextInput
+            placeholder='To'
+            style='pb-2'
+            name='date'
+            defaultValue={data.to}
             handleChange={(e) => handleChange(index, e)}
           />
           <TextArea

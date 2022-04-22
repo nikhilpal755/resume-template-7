@@ -4,21 +4,23 @@ import Divider from './Divider'
 
 const EmploymentHistory = ({ items }) => {
   return (
-    <View style={{ paddingTop: '20px' }}>
+    <View style={{ paddingTop: '10px' }}>
       <Text
         style={{
-          color: '#000',
+          color: '#000080',
           fontSize: '15',
         }}
       >
-        Employment History
+        Experience
       </Text>
       <Divider />
       {items.map((item, index) => (
         <EmploymentHistoryItem
           key={index}
           text={item.position}
-          date={item.date}
+          company={item.company}
+          from={item.from}
+          to={item.to}
           description={item.description}
           responsibilities={item.responsibilities}
         />

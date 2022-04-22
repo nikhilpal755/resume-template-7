@@ -3,6 +3,7 @@ import { Text, View } from '@react-pdf/renderer'
 
 export const SkillItem = ({ name, fillSkill }) => {
   let percent = fillSkill > 100 ? 100 : fillSkill
+  console.log(name)
   return (
     <View style={styles.skill__item__container}>
       <Text style={styles.skill__item__text}>{name}</Text>

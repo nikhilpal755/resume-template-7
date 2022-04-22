@@ -5,58 +5,36 @@ import { SVGItem } from './left/SVGItem'
 import styles from '../../../styles'
 import { SkillItem } from './left/SkillItem'
 import { BuilderContext } from '../../../App'
+import Divider from './right/Divider'
 
-const Socials = () => {
-  const ctx = useContext(BuilderContext)
 
-  return (
-    <View style={styles.socials__container}>
-      {ctx.getSocials().items.map((item, index) => {
-        if (item.enabled)
-          return (
-            <SVGItem
-              key={index}
-              viewBox={item.viewBox}
-              path={item.path}
-              url={item.url}
-            />
-          )
-      })}
-    </View>
-  )
-}
 const Wrapper = ({ heading, ...props }) => {
   return (
     <View style={{ marginTop: '25', marginLeft: '15', marginRight: '15' }}>
       <Text
         style={{
-          color: '#FFF',
-          fontSize: '15',
-          paddingBottom: '10',
+          // color: '#FFF',
+          fontSize: '17',
+          // paddingBottom: '10', 
+          color: '#000080',
+          fontWeight: '900'
         }}
       >
         {heading}
       </Text>
+      <Divider />
       {props.children}
     </View>
   )
 }
-const EducationText = ({ text, date }) => (
-  <View style={{ paddingBottom: '10' }} key={text}>
-    <Text style={{ color: '#fff', fontSize: '12' }}>{text}</Text>
-    <Text style={{ color: '#fff', fontSize: '9', paddingTop: '3' }}>
-      {date}
-    </Text>
-  </View>
-)
+
 
 export const Left = () => {
   const ctx = useContext(BuilderContext)
-  const education = ctx.getComponentData('Education')
-  const skills = ctx.getComponentData('Skills')
+
   const profile = ctx.getComponentData('Profile')
   const contact = ctx.getComponentData('Contact')
-  const certifications = ctx.getComponentData('Certifications')
+  const languages = ctx.getComponentData('Languages')
   return (
     <View style={styles.section__left}>
       <ProfileContainer
@@ -65,39 +43,39 @@ export const Left = () => {
         url={profile.profileImageURL}
         display={profile.display}
       />
-      <View>
-        <Wrapper heading={education.header}>
-          {education.items.map((item, index) => (
-            <EducationText key={index} text={item.degree} date={item.date} />
-          ))}
-        </Wrapper>
-        {skills.display && (
-          <Wrapper heading={skills.header}>
-            {skills.items.map((item, index) => (
-              <SkillItem key={index} name={item.text} fillSkill={item.level} />
-            ))}
-          </Wrapper>
-        )}
-        {certifications.display && (
-          <Wrapper heading={certifications.header}>
-            {certifications.items.map((item, index) => (
-              <EducationText key={index} text={item.name} date={item.date} />
-            ))}
-          </Wrapper>
-        )}
-        {contact.display && (
+      <View style={{marginTop: '-20'}}>
+    
+       
           <Wrapper heading={contact.header}>
             {contact.items.map((item, index) => (
-              <Text
-                key={index}
-                style={{ color: '#fff', fontSize: '12', marginBottom: '8px' }}
-              >
-                {item.text}
-              </Text>
+              <div key={index}>
+            
+                    <Text
+                        
+                        style={{fontSize: '13', marginBottom: '8px' , fontWeight: '900'}}
+                      >
+                        {item.name}
+                      </Text>
+                      <Text
+                        style={{fontSize: '11', marginBottom: '8px' , color: 'grey', paddingBottom: '7'}}
+                      >
+                        {item.text}
+                      </Text>
+                      
+               
+              </div>
             ))}
           </Wrapper>
-        )}
-        <Socials />
+          <Wrapper heading={languages.header}>
+            {languages.items.map((item, index) => (<>
+                    {console.log(item)}
+                    <SkillItem name={item.text} fillSkill={item.level} key={index}/>
+              
+            </>))}
+
+          </Wrapper>
+        
+    
       </View>
     </View>
   )

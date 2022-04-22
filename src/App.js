@@ -27,14 +27,17 @@ function App() {
           {
             degree: 'Software Engineering - University of Sydney',
             date: 'Mar 2017 - Dec 2019',
-          },
+          },{
+            degree: 'Bachelor of Science - University of Sydney',
+            date: 'Mar 2016 - Dec 2017',
+          }
         ],
       },
       {
         header: 'Key Skills',
         type: 'KeySkills',
         display: true,
-        text: '• Knowledge of basic coding languages including C++, HTML5, and JavaScript.\n• Basic knowledge of  SQL, NoSQL databases\n• Knowledgable on Node.js, Spring, Hibernate\n• Extensive Linux/Unix experience\n• Software testing (Jest, Chai, Mocha)\n• CI/CD Basics ',
+        text: '• Knowledge of basic coding languages including C++, HTML5, and JavaScript.\n• Basic knowledge of  SQL, NoSQL databases\n• Knowledgable on Node.js, Spring, Hibernate\n• Extensive Linux/Unix experience ',
       },
       {
         header: 'Employment History',
@@ -42,20 +45,24 @@ function App() {
         display: true,
         items: [
           {
-            position: 'Software Engineer - Bank of E-Corp',
-            date: 'Mar 2017 - Dec 2019',
+            position: 'Software Engineer ',
+            company: 'Bank of E-Corp',
+            from : 'Jan 2019',
+            to: 'Present',
             description:
               'Bank of E-Corp is a Banking Financial Institution in the US.\nAs a Software Engineer, I work on their banking platform in an Agile environment.\n My daily responsibilities include: ',
             responsibilities:
               '• Participating in daily stand up meetings, led by our Scrum Master\n • Utilizing the MEAN stack to enhance and maintain our banking platform \n• Conducting code peer reviews with other members in my team\n• Participating in product demos\n• Documenting all code changes',
           },
           {
-            position: 'Junior Software Developer - Steel Mountain',
-            date: 'Mar 2015 - Dec 2016',
+            position: 'Junior Software Developer',
+            company: 'Steel Mountain',
+            from :'Jan 2018',
+            to: 'Feb 2019',
             description:
               'Bank of E Network is a Banking Financial Institution in the US.\nAs a Software Developer, I work on their banking platform in an Agile environment.\n My daily responsibilities include: ',
             responsibilities:
-              '• Built RESTful API that served data to the JavaScript front-end based on \n   dynamicially chosen user inputs that handled over 100,000 concurrent users.\n • Built international tool using NodeJS and Pupeteer.js to automate QA. \n• Conducting code peer reviews with other members in my team\n• Documenting all code changes ',
+              '• Built RESTful API that served data to the JavaScript front-end based on  dynamicially chosen user inputs that handled over 100,000 concurrent users.\n ',
           },
         ],
       },
@@ -89,11 +96,11 @@ function App() {
         display: true,
         items: [
           {
-            name: 'Oracle Certified\nAssociate (OCA)',
+            name: 'Oracle Certified Associate (OCA)',
             date: 'Mar 2020',
           },
           {
-            name: 'AWS Cloud\n Practitoner',
+            name: 'AWS Cloud Practitoner',
             date: 'Jul 2020',
           },
         ],
@@ -126,21 +133,48 @@ function App() {
         ],
       },
       {
-        header: 'Contact',
+        header: 'Personal Info',
         type: 'Contact',
         display: true,
         items: [
           {
+            name: 'Address',
+            text: '123 Main Street, New York, NY 10001',
+          },
+          {
+            name: 'Phone',
             text: '+61 01 012121',
           },
           {
-            text: 'eliot@example.com',
+            name: 'Email',
+            text: 'eliot@gmail.com',
           },
           {
-            text: 'www.eliotdev.com',
-          },
+            name: 'Age',
+            text: '25',
+          },{
+            name: 'Linkedin',
+            text: 'linkdin.com/in/nikhil'
+          },{
+            name: 'Nationality',
+            text: 'Indian'
+          }
         ],
-      },
+      },{
+        header: 'Languages', 
+        type: 'Languages',
+        items: [{
+          text: 'English',
+          level: '100%'
+        },{
+          text: 'Hindi',
+          level: '70%'
+        },{
+          text: 'French',
+          level: '50%'
+  
+        }]
+      }
     ],
   })
   const getComponentData = (type) => {

@@ -8,14 +8,14 @@ const KeySkills = ({ skills }) => {
         <View style={{ paddingTop: '10px' }}>
           <Text
             style={{
-              color: '#000',
+              color: '#000080',
               fontSize: '15',
             }}
           >
             {skills.header}
           </Text>
           <Divider />
-          <Text style={{ fontSize: '11', marginTop: '4' }}>{skills.text}</Text>
+          <Text style={{ fontSize: '11', marginTop: '4' ,paddingRight: '20'}}>{skills.text}</Text>
         </View>
       )}
     </View>

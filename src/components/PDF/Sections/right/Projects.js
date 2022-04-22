@@ -8,7 +8,7 @@ const Projects = ({ projects }) => {
         <View style={{ paddingTop: '20px' }}>
           <Text
             style={{
-              color: '#000',
+              color: '#000080',
               fontSize: '15',
             }}
           >
